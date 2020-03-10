@@ -22,7 +22,7 @@ function sayHello() {
             for (var i = 0; i < firstName.length; i++) {
                 xAddedval += "X";
             }
-            document.getElementById("firstNameText").innerHTML = xAddval;
+            document.getElementById("firstNameText").innerHTML = xAddedval;
 
         } else {
             document.getElementById("firstNameText").innerHTML = firstName;
