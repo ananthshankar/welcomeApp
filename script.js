@@ -1,4 +1,5 @@
 
+
 document.getElementById("nameText").style.display = "none";
 
 var badText = ['shit', 'dog'];
@@ -7,18 +8,21 @@ document.getElementById("sayButton").addEventListener("click", function () {
     sayHello();
 });
 
+
 function sayHello() {
+
     var firstName = document.getElementById('firstname').value;
 
     if (firstName.length > 0) {
 
-        if (checkBadText(firstName) > 0) {
-           
-            var xAddvalue = '';
+        if (checkBadText(firstName)) {
+
+            var xAddedval = '';
+
             for (var i = 0; i < firstName.length; i++) {
-                xAddvalue += "X";
+                xAddedval += "X";
             }
-            document.getElementById("firstNameText").innerHTML = xAddvalue;
+            document.getElementById("firstNameText").innerHTML = xAddval;
 
         } else {
             document.getElementById("firstNameText").innerHTML = firstName;
@@ -33,7 +37,8 @@ function sayHello() {
 }
 
 function checkBadText(text) {   
-    var word = badText.filter(e => e === text);
-    var textLength = word.length;
-    return textLength;
+    var wordFilter = badText.filter(e => e === text);
+    var wordLength = wordFilter.length;
+    var checkResponse = wordLength > 0 ? true : false;  
+    return checkResponse;
 }
